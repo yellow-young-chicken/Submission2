@@ -38,24 +38,24 @@ p{
   margin:18px 0;
 }
 
-.showtext{
-  display: flex ;
-
-}
-
-.main{
-
-}
-
-.title{
-  display: flex
-
+.show{
+  width: 500px;
 }
 
 .content{
-  width:570px;
+  width:600px;
   display: table;
-  flex-wrap: wrap;
+}
+
+.title{
+  display:table-row;
+
+}
+
+.title-cell{
+  display:table-cell;
+  font-weight: bold;
+  padding-bottom:10px;
 }
 
 .list-comment{

@@ -1,37 +1,41 @@
-<div class="main">
-  <h1 class="notice">Books</h1>
-    <div class="title">
-      <p>Title</p>
-      <p>Body</p>
-    </div>
+<h1 class="notice">Books</h1>
 
-  <div class="content">
-    <% @books.each do |book| %>
-      <div class="list-comment">
-        <span class="cell">
-          <%= book.title %>
-        </span>
+<div class="content">
 
-        <span class="cell">
-          <%= book.body %>
-        </span>
-
-        <div class="link">
-          <div class="link-sentence">
-            <%= link_to "Show", book_path(book) %>
-          </div>
-          <div class="link-sentence">
-            <%= link_to "Edit", edit_book_path(book) %>
-          </div>
-        </div>
-      </div>
-    <% end %>
+  <div class="title">
+    <p class="title-cell">Title</p>
+    <p class="title-cell">Body</p>
   </div>
+
+  <% @books.each do |book| %>
+    <div class="list-comment">
+      <span class="cell">
+        <%= book.title %>
+      </span>
+
+      <span class="cell">
+        <%= book.body %>
+      </span>
+
+      <div class="link">
+        <div class="link-sentence">
+          <%= link_to "Show", book_path(book) %>
+        </div>
+        <div class="link-sentence">
+          <%= link_to "Edit", edit_book_path(book) %>
+        </div>
+        <div class="link-sentence">
+          <%= link_to "Destory", destroy_book_path(book.id) , method: :delete, "data-confirm" => "本当に削除しますか？" %>
+        </div>
+
+      </div>
+    </div>
+  <% end %>
 </div>
 
 <h1>New book</h1>
 <% if @book.errors.any? %>
-  <%= @book.errors.count %>件のエラーが発生しました
+  <%= @book.errors.count %> errors prohibited this book from being saved:
   <ul>
     <% @book.errors.full_messages.each do |message| %>
       <li><%= message %></li>
