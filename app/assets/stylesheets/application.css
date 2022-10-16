@@ -42,41 +42,8 @@ p{
   width: 500px;
 }
 
-.content{
-  width:600px;
-  display: table;
-}
-
-.title{
-  display:table-row;
-
-}
-
-.title-cell{
-  display:table-cell;
-  font-weight: bold;
-  padding-bottom:10px;
-}
-
-.list-comment{
-  display:table-row;
-  width:530px;
-  margin-left: 70px
-}
-
-span{
-  margin:15px;
-}
-
-.cell{
-  display:table-cell
-}
-
-.link{
-  margin:0 10px;
-}
-
-.link-sentence{
-  display:inline-block;
-  margin-right:17px;
+td {
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
 }

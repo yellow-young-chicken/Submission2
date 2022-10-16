@@ -1,37 +1,43 @@
 <h1 class="notice">Books</h1>
 
-<div class="content">
+<table>
 
-  <div class="title">
-    <p class="title-cell">Title</p>
-    <p class="title-cell">Body</p>
-  </div>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
 
-  <% @books.each do |book| %>
-    <div class="list-comment">
-      <span class="cell">
-        <%= book.title %>
-      </span>
+    </tr>
+  </thead>
 
-      <span class="cell">
-        <%= book.body %>
-      </span>
+  <tbody>
+    <% @books.each do |book| %>
 
-      <div class="link">
-        <div class="link-sentence">
+      <tr>
+        <td>
+          <%= book.title %>
+        </td>
+
+        <td>
+          <%= book.body %>
+        </td>
+
+        <td>
           <%= link_to "Show", book_path(book) %>
-        </div>
-        <div class="link-sentence">
+        </td>
+        <td>
           <%= link_to "Edit", edit_book_path(book) %>
-        </div>
-        <div class="link-sentence">
-          <%= link_to "Destory", destroy_book_path(book.id) , method: :delete, "data-confirm" => "本当に削除しますか？" %>
-        </div>
+        </td>
+        <td>
+          <%= link_to "Destroy", destroy_book_path(book.id) , method: :delete, "data-confirm" => "本当に削除しますか？" %>
+        </td>
 
-      </div>
-    </div>
-  <% end %>
-</div>
+      </tr>
+
+    <% end %>
+  </tbody>
+</table>
 
 <h1>New book</h1>
 <% if @book.errors.any? %>
